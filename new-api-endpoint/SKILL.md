@@ -1,6 +1,6 @@
 ---
 name: new-api
-description: create a new api endpoint
+description: create a new api endpoint for the frontend
 license: Apache 2.0
 ---
 To create a new api <endpoint> accessible as /api/my/v1/<endpoint>
