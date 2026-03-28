@@ -1,6 +1,6 @@
 ---
 name: new-api
-description: 
+description:
 license: Apache 2.0
 ---
 To create a new api <endpoint> accessible as /api/my/v1/<endpoint>
@@ -9,9 +9,10 @@ To create a new api <endpoint> accessible as /api/my/v1/<endpoint>
 - be <package> the same as <endpoint> replacing '_' with '-'
 -  reate a folder `packages/v1/<endpoint>`
 - write a file `packages/v1/<endpoint>/__main__.py` with the content:
+
 ```
-#--web true
 #--kind python:default
+#--web true
 ## start params
 ## end params
 import <package>
@@ -20,11 +21,13 @@ def main(args):
     return { "body": <package>.main(args) }
   except Exception as e:
     return {
-       "body": str(e),
-        "statusCode": 500
+      "body": str(e),
+      "statusCode": 500
     }
 ```
+
 - write a file `packages/v1/<endpoint>/<package>.py` with the content:
+
 ```
 def main(args):
     inp = args.get("input", "<package>")
