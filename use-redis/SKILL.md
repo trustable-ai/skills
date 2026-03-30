@@ -13,7 +13,7 @@ To use Redis in an endpoint, first use the tool `add-redis` to add the connectio
 Use `ctx.REDIS` to get and set values. Prefix keys with `ctx.REDIS_PREFIX` to avoid collisions:
 
 ```python
-def main(args, ctx=None):
+def get_set_value(args, ctx=None):
     rd = ctx.REDIS
     prefix = ctx.REDIS_PREFIX
 
@@ -28,7 +28,7 @@ def main(args, ctx=None):
 Use `execute_command` to run arbitrary Redis commands:
 
 ```python
-def main(args, ctx=None):
+def ping_redis(args, ctx=None):
     rd = ctx.REDIS
     result = rd.execute_command("PING")
     return to_string(result)

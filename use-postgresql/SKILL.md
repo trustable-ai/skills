@@ -11,7 +11,7 @@ To use PostgreSQL in an endpoint, first use the tool `add-postgresql` to add the
 Use `ctx.POSTGRESQL` to get the connection, then create a cursor and execute SQL:
 
 ```python
-def main(args, ctx=None):
+def query_table(args, ctx=None):
     conn = ctx.POSTGRESQL
     cur = conn.cursor()
     try:
@@ -29,7 +29,7 @@ def main(args, ctx=None):
 For write operations, remember to commit and check the affected row count:
 
 ```python
-def main(args, ctx=None):
+def insert_row(args, ctx=None):
     conn = ctx.POSTGRESQL
     cur = conn.cursor()
     try:
@@ -43,7 +43,7 @@ def main(args, ctx=None):
 ## CREATE TABLE
 
 ```python
-def main(args, ctx=None):
+def create_table(args, ctx=None):
     conn = ctx.POSTGRESQL
     cur = conn.cursor()
     try:

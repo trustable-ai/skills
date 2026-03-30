@@ -13,7 +13,7 @@ To use S3 in an endpoint, first use the tool `add-s3` to add the connection to y
 ## Uploading a file
 
 ```python
-def main(args, ctx=None):
+def upload_file(args, ctx=None):
     s3 = ctx.S3_CLIENT
     bucket = ctx.S3_DATA
 
@@ -77,7 +77,7 @@ def remove_by_prefix(s3, bucket, prefix):
 Use `ctx.S3_WEB` for files that should be publicly accessible, and `ctx.S3_PUBLIC` to build the public URL:
 
 ```python
-def main(args, ctx=None):
+def publish_image(args, ctx=None):
     s3 = ctx.S3_CLIENT
     bucket = ctx.S3_WEB
     public_url = ctx.S3_PUBLIC
