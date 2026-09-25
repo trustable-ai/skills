@@ -26,8 +26,8 @@ from uuid import uuid4
 def verify_read_write(args, ctx=None):
     s3 = ctx.S3_CLIENT
     bucket = ctx.S3_DATA
-    key = f"trustable-check/{uuid4().hex}.txt"
-    expected = b"trustable-s3-ok"
+    key = f"trustant-check/{uuid4().hex}.txt"
+    expected = b"trustant-s3-ok"
     try:
         s3.put_object(Bucket=bucket, Key=key, Body=expected)
         actual = s3.get_object(Bucket=bucket, Key=key)["Body"].read()
